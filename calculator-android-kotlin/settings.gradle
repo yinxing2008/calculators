@@ -1,2 +1,1 @@
-include ':app'
-rootProject.name = "Calculator"
+include ':app',':app2'
