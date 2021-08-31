@@ -3,6 +3,24 @@ package cn.cxy.calculator
 import android.os.Bundle
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
+import cn.cxy.calculator.Calculator.Companion.KEY_ADD
+import cn.cxy.calculator.Calculator.Companion.KEY_CLEAR
+import cn.cxy.calculator.Calculator.Companion.KEY_DEL
+import cn.cxy.calculator.Calculator.Companion.KEY_DIV
+import cn.cxy.calculator.Calculator.Companion.KEY_DOT
+import cn.cxy.calculator.Calculator.Companion.KEY_EIGHT
+import cn.cxy.calculator.Calculator.Companion.KEY_FIVE
+import cn.cxy.calculator.Calculator.Companion.KEY_FOUR
+import cn.cxy.calculator.Calculator.Companion.KEY_GET_RESULT
+import cn.cxy.calculator.Calculator.Companion.KEY_MULTIPLY
+import cn.cxy.calculator.Calculator.Companion.KEY_NINE
+import cn.cxy.calculator.Calculator.Companion.KEY_ONE
+import cn.cxy.calculator.Calculator.Companion.KEY_SEVEN
+import cn.cxy.calculator.Calculator.Companion.KEY_SIX
+import cn.cxy.calculator.Calculator.Companion.KEY_SUB
+import cn.cxy.calculator.Calculator.Companion.KEY_THREE
+import cn.cxy.calculator.Calculator.Companion.KEY_TWO
+import cn.cxy.calculator.Calculator.Companion.KEY_ZERO
 import kotlinx.android.synthetic.main.activity_main.*
 
 @ExperimentalStdlibApi
