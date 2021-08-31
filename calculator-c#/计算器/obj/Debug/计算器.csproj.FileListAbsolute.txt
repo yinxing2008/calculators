@@ -1,0 +1,115 @@
+D:\VS2017Workplace\计算器\计算器\bin\Debug\计算器.exe.config
+D:\VS2017Workplace\计算器\计算器\bin\Debug\计算器.exe
+D:\VS2017Workplace\计算器\计算器\bin\Debug\计算器.pdb
+D:\VS2017Workplace\计算器\计算器\obj\Debug\计算器.csprojAssemblyReference.cache
+D:\VS2017Workplace\计算器\计算器\obj\Debug\MainWindow.g.cs
+D:\VS2017Workplace\计算器\计算器\obj\Debug\App.g.cs
+D:\VS2017Workplace\计算器\计算器\obj\Debug\计算器_MarkupCompile.cache
+D:\VS2017Workplace\计算器\计算器\obj\Debug\计算器_MarkupCompile.lref
+D:\VS2017Workplace\计算器\计算器\obj\Debug\MainWindow.baml
+D:\VS2017Workplace\计算器\计算器\obj\Debug\计算器.g.resources
+D:\VS2017Workplace\计算器\计算器\obj\Debug\计算器.Properties.Resources.resources
+D:\VS2017Workplace\计算器\计算器\obj\Debug\计算器.csproj.GenerateResource.cache
+D:\VS2017Workplace\计算器\计算器\obj\Debug\计算器.csproj.CoreCompileInputs.cache
+D:\VS2017Workplace\计算器\计算器\obj\Debug\计算器.exe
+D:\VS2017Workplace\计算器\计算器\obj\Debug\计算器.pdb
+D:\VS2017Workplace\计算器\计算器\bin\Debug\ControlzEx.dll
+D:\VS2017Workplace\计算器\计算器\bin\Debug\MahApps.Metro.dll
+D:\VS2017Workplace\计算器\计算器\bin\Debug\System.Windows.Interactivity.dll
+D:\VS2017Workplace\计算器\计算器\bin\Debug\ControlzEx.pdb
+D:\VS2017Workplace\计算器\计算器\bin\Debug\MahApps.Metro.pdb
+D:\VS2017Workplace\计算器\计算器\bin\Debug\MahApps.Metro.xml
+D:\VS2017Workplace\计算器\计算器\obj\Debug\计算器.csproj.CopyComplete
+D:\VS2017Workplace\计算器\计算器\obj\Debug\App.baml
+C:\Users\yinxing\Pictures\新建文件夹 (7)\Calculator-master (1)\Calculator-master\计算器\bin\Debug\计算器.exe.config
+C:\Users\yinxing\Pictures\新建文件夹 (7)\Calculator-master (1)\Calculator-master\计算器\bin\Debug\计算器.exe
+C:\Users\yinxing\Pictures\新建文件夹 (7)\Calculator-master (1)\Calculator-master\计算器\bin\Debug\计算器.pdb
+C:\Users\yinxing\Pictures\新建文件夹 (7)\Calculator-master (1)\Calculator-master\计算器\bin\Debug\ControlzEx.dll
+C:\Users\yinxing\Pictures\新建文件夹 (7)\Calculator-master (1)\Calculator-master\计算器\bin\Debug\MahApps.Metro.dll
+C:\Users\yinxing\Pictures\新建文件夹 (7)\Calculator-master (1)\Calculator-master\计算器\bin\Debug\System.Windows.Interactivity.dll
+C:\Users\yinxing\Pictures\新建文件夹 (7)\Calculator-master (1)\Calculator-master\计算器\bin\Debug\ControlzEx.pdb
+C:\Users\yinxing\Pictures\新建文件夹 (7)\Calculator-master (1)\Calculator-master\计算器\bin\Debug\MahApps.Metro.pdb
+C:\Users\yinxing\Pictures\新建文件夹 (7)\Calculator-master (1)\Calculator-master\计算器\bin\Debug\MahApps.Metro.xml
+C:\Users\yinxing\Pictures\新建文件夹 (7)\Calculator-master (1)\Calculator-master\计算器\obj\Debug\计算器.csproj.AssemblyReference.cache
+C:\Users\yinxing\Pictures\新建文件夹 (7)\Calculator-master (1)\Calculator-master\计算器\obj\Debug\App.baml
+C:\Users\yinxing\Pictures\新建文件夹 (7)\Calculator-master (1)\Calculator-master\计算器\obj\Debug\MainWindow.g.cs
+C:\Users\yinxing\Pictures\新建文件夹 (7)\Calculator-master (1)\Calculator-master\计算器\obj\Debug\App.g.cs
+C:\Users\yinxing\Pictures\新建文件夹 (7)\Calculator-master (1)\Calculator-master\计算器\obj\Debug\计算器_MarkupCompile.cache
+C:\Users\yinxing\Pictures\新建文件夹 (7)\Calculator-master (1)\Calculator-master\计算器\obj\Debug\计算器_MarkupCompile.lref
+C:\Users\yinxing\Pictures\新建文件夹 (7)\Calculator-master (1)\Calculator-master\计算器\obj\Debug\MainWindow.baml
+C:\Users\yinxing\Pictures\新建文件夹 (7)\Calculator-master (1)\Calculator-master\计算器\obj\Debug\计算器.g.resources
+C:\Users\yinxing\Pictures\新建文件夹 (7)\Calculator-master (1)\Calculator-master\计算器\obj\Debug\计算器.Properties.Resources.resources
+C:\Users\yinxing\Pictures\新建文件夹 (7)\Calculator-master (1)\Calculator-master\计算器\obj\Debug\计算器.csproj.GenerateResource.cache
+C:\Users\yinxing\Pictures\新建文件夹 (7)\Calculator-master (1)\Calculator-master\计算器\obj\Debug\计算器.csproj.CoreCompileInputs.cache
+C:\Users\yinxing\Pictures\新建文件夹 (7)\Calculator-master (1)\Calculator-master\计算器\obj\Debug\计算器.csproj.CopyComplete
+C:\Users\yinxing\Pictures\新建文件夹 (7)\Calculator-master (1)\Calculator-master\计算器\obj\Debug\计算器.exe
+C:\Users\yinxing\Pictures\新建文件夹 (7)\Calculator-master (1)\Calculator-master\计算器\obj\Debug\计算器.pdb
+C:\Users\yinxing\Pictures\calculator-c#\计算器\bin\Debug\计算器.exe.config
+C:\Users\yinxing\Pictures\calculator-c#\计算器\bin\Debug\计算器.exe
+C:\Users\yinxing\Pictures\calculator-c#\计算器\bin\Debug\计算器.pdb
+C:\Users\yinxing\Pictures\calculator-c#\计算器\bin\Debug\ControlzEx.dll
+C:\Users\yinxing\Pictures\calculator-c#\计算器\bin\Debug\MahApps.Metro.dll
+C:\Users\yinxing\Pictures\calculator-c#\计算器\bin\Debug\System.Windows.Interactivity.dll
+C:\Users\yinxing\Pictures\calculator-c#\计算器\bin\Debug\ControlzEx.pdb
+C:\Users\yinxing\Pictures\calculator-c#\计算器\bin\Debug\MahApps.Metro.pdb
+C:\Users\yinxing\Pictures\calculator-c#\计算器\bin\Debug\MahApps.Metro.xml
+C:\Users\yinxing\Pictures\calculator-c#\计算器\obj\Debug\计算器.csproj.AssemblyReference.cache
+C:\Users\yinxing\Pictures\calculator-c#\计算器\obj\Debug\App.baml
+C:\Users\yinxing\Pictures\calculator-c#\计算器\obj\Debug\MainWindow.g.cs
+C:\Users\yinxing\Pictures\calculator-c#\计算器\obj\Debug\App.g.cs
+C:\Users\yinxing\Pictures\calculator-c#\计算器\obj\Debug\计算器_MarkupCompile.cache
+C:\Users\yinxing\Pictures\calculator-c#\计算器\obj\Debug\计算器_MarkupCompile.lref
+C:\Users\yinxing\Pictures\calculator-c#\计算器\obj\Debug\MainWindow.baml
+C:\Users\yinxing\Pictures\calculator-c#\计算器\obj\Debug\计算器.g.resources
+C:\Users\yinxing\Pictures\calculator-c#\计算器\obj\Debug\计算器.Properties.Resources.resources
+C:\Users\yinxing\Pictures\calculator-c#\计算器\obj\Debug\计算器.csproj.GenerateResource.cache
+C:\Users\yinxing\Pictures\calculator-c#\计算器\obj\Debug\计算器.csproj.CoreCompileInputs.cache
+C:\Users\yinxing\Pictures\calculator-c#\计算器\obj\Debug\计算器.csproj.CopyComplete
+C:\Users\yinxing\Pictures\calculator-c#\计算器\obj\Debug\计算器.exe
+C:\Users\yinxing\Pictures\calculator-c#\计算器\obj\Debug\计算器.pdb
+C:\Users\yinxing\Desktop\计算器\calculator-c# - 副本\计算器\bin\Debug\计算器.exe.config
+C:\Users\yinxing\Desktop\计算器\calculator-c# - 副本\计算器\bin\Debug\计算器.exe
+C:\Users\yinxing\Desktop\计算器\calculator-c# - 副本\计算器\bin\Debug\计算器.pdb
+C:\Users\yinxing\Desktop\计算器\calculator-c# - 副本\计算器\bin\Debug\ControlzEx.dll
+C:\Users\yinxing\Desktop\计算器\calculator-c# - 副本\计算器\bin\Debug\MahApps.Metro.dll
+C:\Users\yinxing\Desktop\计算器\calculator-c# - 副本\计算器\bin\Debug\System.Windows.Interactivity.dll
+C:\Users\yinxing\Desktop\计算器\calculator-c# - 副本\计算器\bin\Debug\ControlzEx.pdb
+C:\Users\yinxing\Desktop\计算器\calculator-c# - 副本\计算器\bin\Debug\MahApps.Metro.pdb
+C:\Users\yinxing\Desktop\计算器\calculator-c# - 副本\计算器\bin\Debug\MahApps.Metro.xml
+C:\Users\yinxing\Desktop\计算器\calculator-c# - 副本\计算器\obj\Debug\计算器.csproj.AssemblyReference.cache
+C:\Users\yinxing\Desktop\计算器\calculator-c# - 副本\计算器\obj\Debug\App.baml
+C:\Users\yinxing\Desktop\计算器\calculator-c# - 副本\计算器\obj\Debug\MainWindow.g.cs
+C:\Users\yinxing\Desktop\计算器\calculator-c# - 副本\计算器\obj\Debug\App.g.cs
+C:\Users\yinxing\Desktop\计算器\calculator-c# - 副本\计算器\obj\Debug\计算器_MarkupCompile.cache
+C:\Users\yinxing\Desktop\计算器\calculator-c# - 副本\计算器\obj\Debug\计算器_MarkupCompile.lref
+C:\Users\yinxing\Desktop\计算器\calculator-c# - 副本\计算器\obj\Debug\MainWindow.baml
+C:\Users\yinxing\Desktop\计算器\calculator-c# - 副本\计算器\obj\Debug\计算器.g.resources
+C:\Users\yinxing\Desktop\计算器\calculator-c# - 副本\计算器\obj\Debug\计算器.Properties.Resources.resources
+C:\Users\yinxing\Desktop\计算器\calculator-c# - 副本\计算器\obj\Debug\计算器.csproj.GenerateResource.cache
+C:\Users\yinxing\Desktop\计算器\calculator-c# - 副本\计算器\obj\Debug\计算器.csproj.CoreCompileInputs.cache
+C:\Users\yinxing\Desktop\计算器\calculator-c# - 副本\计算器\obj\Debug\计算器.csproj.CopyComplete
+C:\Users\yinxing\Desktop\计算器\calculator-c# - 副本\计算器\obj\Debug\计算器.exe
+C:\Users\yinxing\Desktop\计算器\calculator-c# - 副本\计算器\obj\Debug\计算器.pdb
+C:\Users\yinxing\Desktop\计算器\calculator-c#2\计算器\bin\Debug\计算器.exe.config
+C:\Users\yinxing\Desktop\计算器\calculator-c#2\计算器\bin\Debug\计算器.exe
+C:\Users\yinxing\Desktop\计算器\calculator-c#2\计算器\bin\Debug\计算器.pdb
+C:\Users\yinxing\Desktop\计算器\calculator-c#2\计算器\bin\Debug\ControlzEx.dll
+C:\Users\yinxing\Desktop\计算器\calculator-c#2\计算器\bin\Debug\MahApps.Metro.dll
+C:\Users\yinxing\Desktop\计算器\calculator-c#2\计算器\bin\Debug\System.Windows.Interactivity.dll
+C:\Users\yinxing\Desktop\计算器\calculator-c#2\计算器\bin\Debug\ControlzEx.pdb
+C:\Users\yinxing\Desktop\计算器\calculator-c#2\计算器\bin\Debug\MahApps.Metro.pdb
+C:\Users\yinxing\Desktop\计算器\calculator-c#2\计算器\bin\Debug\MahApps.Metro.xml
+C:\Users\yinxing\Desktop\计算器\calculator-c#2\计算器\obj\Debug\计算器.csproj.AssemblyReference.cache
+C:\Users\yinxing\Desktop\计算器\calculator-c#2\计算器\obj\Debug\App.baml
+C:\Users\yinxing\Desktop\计算器\calculator-c#2\计算器\obj\Debug\MainWindow.g.cs
+C:\Users\yinxing\Desktop\计算器\calculator-c#2\计算器\obj\Debug\App.g.cs
+C:\Users\yinxing\Desktop\计算器\calculator-c#2\计算器\obj\Debug\计算器_MarkupCompile.cache
+C:\Users\yinxing\Desktop\计算器\calculator-c#2\计算器\obj\Debug\计算器_MarkupCompile.lref
+C:\Users\yinxing\Desktop\计算器\calculator-c#2\计算器\obj\Debug\MainWindow.baml
+C:\Users\yinxing\Desktop\计算器\calculator-c#2\计算器\obj\Debug\计算器.g.resources
+C:\Users\yinxing\Desktop\计算器\calculator-c#2\计算器\obj\Debug\计算器.Properties.Resources.resources
+C:\Users\yinxing\Desktop\计算器\calculator-c#2\计算器\obj\Debug\计算器.csproj.GenerateResource.cache
+C:\Users\yinxing\Desktop\计算器\calculator-c#2\计算器\obj\Debug\计算器.csproj.CoreCompileInputs.cache
+C:\Users\yinxing\Desktop\计算器\calculator-c#2\计算器\obj\Debug\计算器.csproj.CopyComplete
+C:\Users\yinxing\Desktop\计算器\calculator-c#2\计算器\obj\Debug\计算器.exe
+C:\Users\yinxing\Desktop\计算器\calculator-c#2\计算器\obj\Debug\计算器.pdb
