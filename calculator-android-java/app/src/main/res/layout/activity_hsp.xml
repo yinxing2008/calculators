@@ -2,6 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#EE181818"
     android:orientation="vertical">
 
     <TextView
@@ -9,13 +10,13 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="10dp"
-        android:background="@drawable/shape_white_with_stroke"
+        android:background="@drawable/shape_bg1"
         android:gravity="end|bottom"
         android:lines="3"
         android:maxLines="3"
         android:padding="10dp"
         android:scrollbars="vertical"
-        android:textColor="#000000"
+        android:textColor="#FFFFFF"
         android:textSize="25sp" />
 
     <LinearLayout
@@ -28,7 +29,7 @@
             android:layout_height="75dp"
             android:orientation="horizontal">
 
-            <Button
+            <TextView
                 android:id="@+id/btn_clear"
                 style="@style/btn_cal"
                 android:text="@string/clear_text" />
@@ -39,24 +40,24 @@
             android:layout_height="75dp"
             android:orientation="horizontal">
 
-            <Button
+            <TextView
                 android:id="@+id/btn_seven"
                 style="@style/btn_cal"
                 android:text="@string/seven_text" />
 
-            <Button
+            <TextView
                 android:id="@+id/btn_eight"
                 style="@style/btn_cal"
                 android:text="@string/eight_text" />
 
-            <Button
+            <TextView
                 android:id="@+id/btn_nine"
                 style="@style/btn_cal"
                 android:text="@string/nine_text" />
 
-            <Button
+            <TextView
                 android:id="@+id/btn_plus"
-                style="@style/btn_cal"
+                style="@style/btn_cal2"
                 android:text="@string/plus_text" />
         </LinearLayout>
 
@@ -65,24 +66,24 @@
             android:layout_height="75dp"
             android:orientation="horizontal">
 
-            <Button
+            <TextView
                 android:id="@+id/btn_four"
                 style="@style/btn_cal"
                 android:text="@string/four_text" />
 
-            <Button
+            <TextView
                 android:id="@+id/btn_five"
                 style="@style/btn_cal"
                 android:text="@string/five_text" />
 
-            <Button
+            <TextView
                 android:id="@+id/btn_six"
                 style="@style/btn_cal"
                 android:text="@string/six_text" />
 
-            <Button
+            <TextView
                 android:id="@+id/btn_minus"
-                style="@style/btn_cal"
+                style="@style/btn_cal2"
                 android:text="@string/minus_text" />
         </LinearLayout>
 
@@ -91,24 +92,24 @@
             android:layout_height="75dp"
             android:orientation="horizontal">
 
-            <Button
+            <TextView
                 android:id="@+id/btn_one"
                 style="@style/btn_cal"
                 android:text="@string/one_text" />
 
-            <Button
+            <TextView
                 android:id="@+id/btn_two"
                 style="@style/btn_cal"
                 android:text="@string/second_text" />
 
-            <Button
+            <TextView
                 android:id="@+id/btn_three"
                 style="@style/btn_cal"
                 android:text="@string/three_text" />
 
-            <Button
+            <TextView
                 android:id="@+id/btn_divide"
-                style="@style/btn_cal"
+                style="@style/btn_cal2"
                 android:text="@string/divide_text" />
         </LinearLayout>
 
@@ -117,25 +118,37 @@
             android:layout_height="75dp"
             android:orientation="horizontal">
 
-            <Button
+            <TextView
                 android:id="@+id/btn_zero"
                 style="@style/btn_cal"
                 android:text="@string/zero_text" />
 
-            <Button
+            <TextView
                 android:id="@+id/btn_dot"
                 style="@style/btn_cal"
                 android:text="@string/dot_text" />
 
-            <Button
+            <TextView
                 android:id="@+id/btn_equal"
-                style="@style/btn_cal"
+                style="@style/btn_cal3"
                 android:text="@string/equal_text" />
 
-            <Button
+            <TextView
                 android:id="@+id/btn_multiply"
-                style="@style/btn_cal"
+                style="@style/btn_cal2"
                 android:text="@string/multiply_text" />
         </LinearLayout>
     </LinearLayout>
+
+    <TextView
+        android:id="@+id/aboutMe"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:gravity="center_horizontal|bottom"
+        android:paddingBottom="40dp"
+        android:scrollbars="vertical"
+        android:text="点击了解更多..."
+        android:textColor="#0F7FF5"
+        android:textSize="15sp" />
 </LinearLayout>

@@ -1,9 +1,11 @@
 package cn.hsp.calculator;
 
-import androidx.appcompat.app.AppCompatActivity;
-
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.widget.TextView;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.hspcalculator.R;
 
@@ -54,22 +56,22 @@ public class HspActivity extends AppCompatActivity {
         findViewById(R.id.btn_equal).setOnClickListener(View -> {
             String temp;
             temp = firstNum.equals("") ? "0" : firstNum;
-            Double leftNo = Double.valueOf(temp);
+            Double leftNum = Double.valueOf(temp);
             temp = nextNum.equals("") ? "0" : nextNum;
-            Double rightNo = Double.valueOf(temp);
+            Double rightNum = Double.valueOf(temp);
             double result = 0.00;
             switch (operator) {
                 case "+":
-                    result = leftNo + rightNo;
+                    result = leftNum + rightNum;
                     break;
                 case "-":
-                    result = leftNo - rightNo;
+                    result = leftNum - rightNum;
                     break;
                 case "X":
-                    result = leftNo * rightNo;
+                    result = leftNum * rightNum;
                     break;
                 case "÷":
-                    result = leftNo / rightNo;
+                    result = leftNum / rightNum;
                     break;
             }
             resultTv.setText(String.valueOf(result));
@@ -105,7 +107,9 @@ public class HspActivity extends AppCompatActivity {
             }
             showResult();
         });
+        findViewById(R.id.aboutMe).setOnClickListener(View -> gotoAboutMe());
     }
+
 
     //设置firstNum、nextNum、operator的值，并设置显示
     private void setMyValue(String myValue) {
@@ -135,4 +139,10 @@ public class HspActivity extends AppCompatActivity {
         resultTv.setText(String.format(getResources().getString(R.string.display_Bar), firstNum, operator, nextNum));
     }
 
+    private void gotoAboutMe() {
+        Intent intent = new Intent(Intent.ACTION_VIEW);
+        Uri uri = Uri.parse("https://juejin.cn/post/7002177988984832030");
+        intent.setData(uri);
+        startActivity(intent);
+    }
 }
