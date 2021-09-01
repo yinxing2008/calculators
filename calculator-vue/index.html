@@ -73,28 +73,28 @@
                 </div>
                 <el-row :gutter="24">
                     <el-col :span="24">
-                        <el-button type="warning" @click="mathAction('clear')">清空</el-button>
-                        <el-button type="warning" @click="mathAction('del')">回退</el-button>
-                        <el-button type="warning" @click="mathAction('percentage')">%</el-button>
-                        <el-button type="warning" @click="mathAction('div')">÷</el-button>
+                        <el-button type="danger" @click="mathAction('clear')">清空</el-button>
+                        <el-button type="info" @click="mathAction('del')">回退</el-button>
+                        <el-button type="info" @click="mathAction('percentage')">%</el-button>
+                        <el-button type="info" @click="mathAction('div')">÷</el-button>
                     </el-col>
                     <el-col :span="24">
                         <el-button type="primary" @click='numBtn(7)'>7</el-button>
                         <el-button type="primary" @click='numBtn(8)'>8</el-button>
                         <el-button type="primary" @click='numBtn(9)'>9</el-button>
-                        <el-button type="warning" @click="mathAction('mult')">x</el-button>
+                        <el-button type="info" @click="mathAction('mult')">x</el-button>
                     </el-col>
                     <el-col :span="24">
                         <el-button type="primary" @click='numBtn(4)'>4</el-button>
                         <el-button type="primary" @click='numBtn(5)'>5</el-button>
                         <el-button type="primary" @click='numBtn(6)'>6</el-button>
-                        <el-button type="warning" @click="mathAction('min')">-</el-button>
+                        <el-button type="info" @click="mathAction('min')">-</el-button>
                     </el-col>
                     <el-col :span="24">
                         <el-button type="primary" @click='numBtn(1)'>1</el-button>
                         <el-button type="primary" @click='numBtn(2)'>2</el-button>
                         <el-button type="primary" @click='numBtn(3)'>3</el-button>
-                        <el-button type="warning" @click="mathAction('add')">+</el-button>
+                        <el-button type="info" @click="mathAction('add')">+</el-button>
                     </el-col>
                     <el-col :span="24">
                         <el-button type="primary" @click='numBtn(0)' style="width: 215px;">0</el-button>
