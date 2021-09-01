@@ -75,11 +75,9 @@ class _BtnWidgetState extends State<BtnWidget> {
       _activeBtn = '';
       _lastIsResult = false;
     });
-    print('$_lastIsResult,$_entry');
   }
 
   String _cal(xStr, opt, yStr) {
-    print('$xStr, $opt, $yStr');
     final double x = double.parse(xStr);
     final double y = double.parse(yStr);
     double result = 0.0;
@@ -109,7 +107,6 @@ class _BtnWidgetState extends State<BtnWidget> {
     } else if (result.toInt() - result == 0) {
       return result.toInt().toString();
     } else {
-//      return result.toString().length > 8 ? result.toStringAsFixed(5) : result.toString();
       return result.toString();
     }
   }
@@ -158,7 +155,6 @@ class _BtnWidgetState extends State<BtnWidget> {
   }
 
   void _handleOperatorBtnChanged(String val) {
-//    final lastIsNumber = RegExp(r'^[0-9]+$').hasMatch(last);
     String newActiveBtn = '';
     List<String> newEntry = _entry.toList();
     String newScreen = '';
@@ -353,7 +349,15 @@ class _BtnWidgetState extends State<BtnWidget> {
                                             )),
                                       ));
                                 }).toList()));
-                      }).toList()))
+                      }).toList())),
+              new MaterialButton(
+                color: Colors.blue,
+                textColor: Colors.white,
+                child: new Text('点击了解更多...'),
+                onPressed: () {
+
+                },
+              ),
             ])));
   }
 }
