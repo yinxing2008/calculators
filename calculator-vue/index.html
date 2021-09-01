@@ -4,53 +4,44 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <script src="../public/vue.js"></script>
-    <link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
-    <!-- 引入组件库 -->
+    <title>计算器-花生皮编程</title>
+    <script src="https://unpkg.com/vue@2.6.14/dist/vue.js"></script>
     <script src="https://unpkg.com/element-ui/lib/index.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
 </head>
 <style>
     .el-header,
     .el-footer {
-        background-color: #B3C0D1;
-        color: #333;
+        background-color: #0a0a0a;
+        color: #fff;
         text-align: center;
         line-height: 60px;
     }
-    
     .el-aside {
         background-color: #D3DCE6;
         color: #333;
         text-align: center;
         line-height: 200px;
     }
-    
     .el-main {
         min-width: 500px;
-        background-color: #E9EEF3;
-        color: #333;
+        background-color: #0a0a0a;
         text-align: center;
         line-height: 55px;
     }
-    
     .el-button {
         width: 100px;
     }
-    
     body>.el-container {
         margin-bottom: 40px;
     }
-    
     .el-container:nth-child(5) .el-aside,
     .el-container:nth-child(6) .el-aside {
         line-height: 260px;
     }
-    
     .el-container:nth-child(7) .el-aside {
         line-height: 320px;
     }
-    
     .clearfix {
         width: 430px;
         text-align: right;
@@ -61,28 +52,7 @@
         display: flex;
         flex-direction: column-reverse;
     }
-    
     .clearfix span {
-        word-break: normal;
-        width: auto;
-        display: block;
-        white-space: pre-wrap;
-        word-wrap: break-word;
-        overflow: hidden;
-    }
-    
-    .debug {
-        width: 430px;
-        text-align: right;
-        margin: 0 auto;
-        font-size: 20px;
-        font-weight: bold;
-        min-height: 110px;
-        line-height: 35px;
-    }
-    
-    .debug span {
-        width: 100%;
         word-break: normal;
         width: auto;
         display: block;
@@ -93,85 +63,62 @@
 </style>
 
 <body>
-    <div id="calculator">
-        <el-container>
-            <el-header>vue计算器（element）</el-header>
-            <el-main @@keyup=>
-                <el-card class="box-card" style="width: 500px; margin: 0 auto;">
-                    <div slot="header" class="clearfix">
-                        <span>{{resultMsg}}</span>
-                    </div>
-                    <el-row :gutter="24">
-                        <el-col :span="19" :offset="5">
-                            <el-switch v-model="btnVideoFlag" inactive-text="按键音"></el-switch>
-                            <el-switch v-model="debugFlag" inactive-text="调试模式"></el-switch>
-                            <el-tooltip class="item" effect="dark" content="默认结果不超过14位" placement="top">
-                                <el-switch v-model="lengthLimit" inactive-text="计算限制"></el-switch>
-                            </el-tooltip>
-                        </el-col>
+<div id="calculator">
+    <el-container>
+        <el-header>计算器-花生皮编程</el-header>
+        <el-main @@keyup=>
+            <el-card class="box-card" style="width: 500px; margin: 0 auto;">
+                <div slot="header" class="clearfix">
+                    <span>{{resultMsg}}</span>
+                </div>
+                <el-row :gutter="24">
+                    <el-col :span="24">
+                        <el-button type="warning" @click="mathAction('clear')">清空</el-button>
+                        <el-button type="warning" @click="mathAction('del')">回退</el-button>
+                        <el-button type="warning" @click="mathAction('percentage')">%</el-button>
+                        <el-button type="warning" @click="mathAction('div')">÷</el-button>
+                    </el-col>
+                    <el-col :span="24">
+                        <el-button type="primary" @click='numBtn(7)'>7</el-button>
+                        <el-button type="primary" @click='numBtn(8)'>8</el-button>
+                        <el-button type="primary" @click='numBtn(9)'>9</el-button>
+                        <el-button type="warning" @click="mathAction('mult')">x</el-button>
+                    </el-col>
+                    <el-col :span="24">
+                        <el-button type="primary" @click='numBtn(4)'>4</el-button>
+                        <el-button type="primary" @click='numBtn(5)'>5</el-button>
+                        <el-button type="primary" @click='numBtn(6)'>6</el-button>
+                        <el-button type="warning" @click="mathAction('min')">-</el-button>
+                    </el-col>
+                    <el-col :span="24">
+                        <el-button type="primary" @click='numBtn(1)'>1</el-button>
+                        <el-button type="primary" @click='numBtn(2)'>2</el-button>
+                        <el-button type="primary" @click='numBtn(3)'>3</el-button>
+                        <el-button type="warning" @click="mathAction('add')">+</el-button>
+                    </el-col>
+                    <el-col :span="24">
+                        <el-button type="primary" @click='numBtn(0)' style="width: 215px;">0</el-button>
+                        <el-button type="primary" @click='numBtn(".")'>.</el-button>
+                        <el-button type="warning" @click="mathAction('equal')">=</el-button>
+                    </el-col>
+                </el-row>
 
-                        <el-col :span="24">
-                            <el-button type="warning" @click="mathAction('clear')">C</el-button>
-                            <el-button type="warning" @click="mathAction('del')">Del</el-button>
-                            <el-button type="warning" @click="mathAction('percentage')">%</el-button>
-                            <el-button type="warning" @click="mathAction('divide')">÷</el-button>
-                        </el-col>
-                        <el-col :span="24">
-                            <el-button type="primary" @click='numBtn(7)'>7</el-button>
-                            <el-button type="primary" @click='numBtn(8)'>8</el-button>
-                            <el-button type="primary" @click='numBtn(9)'>9</el-button>
-                            <el-button type="warning" @click="mathAction('mult')">x</el-button>
-                        </el-col>
-                        <el-col :span="24">
-                            <el-button type="primary" @click='numBtn(4)'>4</el-button>
-                            <el-button type="primary" @click='numBtn(5)'>5</el-button>
-                            <el-button type="primary" @click='numBtn(6)'>6</el-button>
-                            <el-button type="warning" @click="mathAction('min')">-</el-button>
-                        </el-col>
-                        <el-col :span="24">
-                            <el-button type="primary" @click='numBtn(1)'>1</el-button>
-                            <el-button type="primary" @click='numBtn(2)'>2</el-button>
-                            <el-button type="primary" @click='numBtn(3)'>3</el-button>
-                            <el-button type="warning" @click="mathAction('add')">+</el-button>
-                        </el-col>
-                        <el-col :span="24">
-                            <el-button type="primary" @click='numBtn(0)' style="width: 215px;">0</el-button>
-                            <el-button type="primary" @click='numBtn(".")'>.</el-button>
-                            <el-button type="warning" @click="mathAction('equal')">=</el-button>
-                        </el-col>
-                        <el-col :span="24">
-                            <div class="debug" v-if="debugFlag">
-                                <span>【显示值】{{resultMsg}}/【类型】{{typeof resultMsg}}</span>
-                                <span>【前位数】{{firstNum}}/【类型】{{typeof firstNum}}</span>
-                                <span>【后位数】{{lastNum}}/【类型】{{typeof lastNum}}</span>
-                                <span>【计算是否开始】{{mathStart?"开始":"未开始"}}/【类型】{{typeof mathStart}}</span>
-                                <span>【计算方式】{{mathfun}}/【类型】{{typeof mathfun}}</span>
-                                <span>【历史运算】{{enterMathFlag?'历史':'新运算'}}/【类型】{{typeof enterMathFlag}}</span>
-                            </div>
-                        </el-col>
-                    </el-row>
+            </el-card>
 
-                </el-card>
-
-            </el-main>
-        </el-container>
-    </div>
+        </el-main>
+    </el-container>
+</div>
 </body>
 <script>
     var app = new Vue({
         el: '#calculator',
         data: {
             enterMathFlag: false,
-            btnVideoFlag: true,
-            lengthLimit: true, //位数
-            lengthLimitFlag: false, //功能标识
-            debugFlag: false, //debug
             resultMsg: '', //计算器显示
             firstNum: '', //计算方式的前参  后参  
             lastNum: '', //计算方式的前参  后参  
             mathStart: false, //计算开始结束标识
             mathfun: '', //计算方式标识
-            message: 'Hello Vue!',
         },
 
         created() {
@@ -187,23 +134,14 @@
             },
             numBtn(val) {
                 let _this = this
-
-
-                if (_this.btnVideoFlag) {
-                    _this.btnVideo()
-                }
+                _this.playAudio()
 
                 if (_this.enterMathFlag && !_this.mathStart) {
                     _this.enterMathFlag = false
                     _this.resetCalculation()
                 }
 
-                if (_this.lengthLimitFlag == true) {
-                    _this.lengthLimitFlag = false
-                    _this.resetCalculation()
-                }
-
-                if (_this.mathfun == "divide" && _this.lastNum == '' && val == 0) {
+                if (_this.mathfun == "div" && _this.lastNum == '' && val == 0) {
                     return
                 }
 
@@ -252,9 +190,7 @@
 
             mathAction(val) {
                 let _this = this
-                if (_this.btnVideoFlag) {
-                    _this.btnVideo()
-                }
+                _this.playAudio()
                 if (val == "clear") {
                     _this.enterMathFlag = false
                     _this.resetCalculation()
@@ -262,10 +198,6 @@
 
                 if (_this.firstNum == "") {
                     return
-                }
-                if (_this.lengthLimitFlag == true) {
-                    _this.lengthLimitFlag = false
-                    _this.resetCalculation()
                 }
 
                 switch (val) {
@@ -307,10 +239,10 @@
                             _this.mathfun = "mult"
                         })
                         break;
-                    case "divide":
+                    case "div":
                         _this.restorePreconditions(function() {
                             _this.resultMsg += "÷"
-                            _this.mathfun = "divide"
+                            _this.mathfun = "div"
                         })
                         break;
                     case "equal":
@@ -336,7 +268,6 @@
                     _this.mathfun = ""
                     return
                 }
-                // ------------------------------------
                 switch (key) {
                     case 'add':
                         _this.mathStart = false
@@ -363,7 +294,7 @@
 
                         break;
 
-                    case "divide":
+                    case "div":
                         if (parseFloat(_this.lastNum) == 0) {
                             return
                         }
@@ -374,31 +305,14 @@
                 }
 
             },
-            ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-            ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-            ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-            ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
             /**
              * 检查最大位数显示
              */
             CheckResultMaxLength(result) {
                 let _this = this
-                _this.enterMathFlag = true
-                if (_this.lengthLimit) {
-                    if (result.length > 14) {
-                        _this.resetCalculation()
-                        _this.resultMsg = "超过最大位数限制"
-                        _this.lengthLimitFlag = true
-                    } else {
-                        _this.firstNum = result
-                        _this.lastNum = ''
-                        _this.mathfun = ""
-                    }
-                } else {
-                    _this.firstNum = result
-                    _this.lastNum = ''
-                    _this.mathfun = ""
-                }
+                _this.firstNum = result
+                _this.lastNum = ''
+                _this.mathfun = ""
             },
             // --------------------------------------------------------------------------------------------------------------------------
             /**
@@ -436,9 +350,9 @@
                 }
                 callback()
             },
-            btnVideo() {
+            playAudio() {
                 let audio = new Audio()
-                audio.src = "../public/MP3/8916.mp3"
+                audio.src = "audio.mp3"
                 audio.play();
             },
             btnSwitch(ketNum) {
@@ -500,12 +414,13 @@
                         _this.mathAction('mult')
                         break
                     case 111:
-                        _this.mathAction('divide')
+                        _this.mathAction('div')
                         break
                 }
             }
         }
     })
+
 </script>
 
 </html>
