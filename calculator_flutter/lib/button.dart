@@ -108,10 +108,10 @@ class _BaseBtnState extends State<BaseBtn> {
       child: Container(
         child: centerText,
         width: 70.0,
-        height: 70.0,
+        height: 60.0,
         decoration: BoxDecoration(
           borderRadius: BorderRadius.all(
-            const Radius.circular(70.0),
+            const Radius.circular(4.0),
           ),
           // border: new Border.all(color: Colors.grey[800]),
           color: widget.active
