@@ -2,15 +2,15 @@ import tkinter as tk
 
 
 def printout(result1, result2, frm):
-    label1 = tk.Label(frm, font=('微软雅黑', 20), bg='#EEE9E9', bd='9', fg='#828282', anchor='se', textvariable=result1)
+    label1 = tk.Label(frm, font=('微软雅黑', 20), bg='#0a0a0a', bd='9', fg='#ffffff', anchor='se', textvariable=result1)
     label1.place(relx=1, rely=0.5, relwidth=1, relheight=0.5, anchor='se')
-    label2 = tk.Label(frm, font=('微软雅黑', 20), bg='#EEE9E9', bd='9', fg='#828282', anchor='se', textvariable=result2)
+    label2 = tk.Label(frm, font=('微软雅黑', 20), bg='#0a0a0a', bd='9', fg='#ffffff', anchor='se', textvariable=result2)
     label2.place(relx=1, rely=1, relwidth=1, relheight=0.5, anchor='se')
 
 
 def layout(root, result1, result2):
     frm1 = tk.Frame(root)
-    frm1.config(width=320, height=100, relief='solid', highlightthickness=2, highlightbackground='red')
+    frm1.config(width=320, height=100, relief='solid')
 
     printout(result1, result2, frm1)
     frm1.grid(row=0, column=0)
@@ -18,7 +18,7 @@ def layout(root, result1, result2):
     frm1.update()
 
     frm2 = tk.Frame(root)
-    frm2.config(width=320, height=400, bg='#dfe9f4', relief='solid', highlightthickness=2, highlightbackground='blue')
+    frm2.config(width=320, height=400, bg='#dfe9f4', relief='solid')
     layout_button(frm2)
 
     frm2.grid(row=1, column=0)
@@ -139,8 +139,8 @@ def press_equal():
 
 
 root = tk.Tk()
-root.title("计算器1.0")
-root['bg'] = '#dfe9f4'
+root.title("计算器-花生皮编程")
+root['bg'] = '#181818'
 root.geometry("320x500")
 
 isintbtn = False  # 确认是否按下了计算符，默认为未按下
