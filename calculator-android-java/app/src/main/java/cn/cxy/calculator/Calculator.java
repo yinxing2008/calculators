@@ -6,67 +6,30 @@ import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
 
-import kotlin.collections.CollectionsKt;
 import kotlin.jvm.internal.Intrinsics;
-import kotlin.text.Regex;
-import kotlin.text.StringsKt;
 
 public final class Calculator {
-    private StringBuffer inputStringBuffer;
-
-    private final ResultCallback resultCallback;
-
     public static final String KEY_CLEAR = "C";
-
     public static final String KEY_DIV = "÷";
-
-
     public static final String KEY_MULTIPLY = "×";
-
-
     public static final String KEY_DEL = "D";
-
-
     public static final String KEY_SEVEN = "7";
-
-
     public static final String KEY_EIGHT = "8";
-
-
     public static final String KEY_NINE = "9";
-
-
-    public static final String KEY_SUB = "-";
-
-
+    public static final String KEY_MINUS = "-";
     public static final String KEY_FOUR = "4";
-
-
     public static final String KEY_FIVE = "5";
-
-
     public static final String KEY_SIX = "6";
-
-
     public static final String KEY_ADD = "+";
-
-
     public static final String KEY_ONE = "1";
-
-
     public static final String KEY_TWO = "2";
-
-
     public static final String KEY_THREE = "3";
-
-
     public static final String KEY_GET_RESULT = "=";
-
-
     public static final String KEY_ZERO = "0";
-
-
     public static final String KEY_DOT = ".";
+
+    private final StringBuffer inputStringBuffer;
+    private final ResultCallback resultCallback;
 
     private static final int CALC_SCALE = 10;
 
@@ -82,7 +45,7 @@ public final class Calculator {
             clear();
         } else if (KEY_DEL.equals(input)) {
             deleteLastInput();
-        } else if (KEY_ADD.equals(input) || KEY_SUB.equals(input) || KEY_MULTIPLY.equals(input) || KEY_DIV.equals(input)) {
+        } else if (KEY_ADD.equals(input) || KEY_MINUS.equals(input) || KEY_MULTIPLY.equals(input) || KEY_DIV.equals(input)) {
             checkInputOp(input);
         } else if (KEY_DOT.equals(input)) {
             checkInputDot(input);
@@ -91,13 +54,10 @@ public final class Calculator {
         } else {
             checkInputNum(input);
         }
-        if (result != null && !result.isEmpty()) {
+        if (!result.isEmpty()) {
             inputStringBuffer.replace(0, this.inputStringBuffer.length(), result);
-        } else {
-            tempResult = getResult();
         }
         this.resultCallback.updateResult(this.inputStringBuffer.toString());
-        this.resultCallback.updateTempResult(tempResult);
     }
 
     private String getResult() {
@@ -112,9 +72,9 @@ public final class Calculator {
         return result;
     }
 
-    private final String formatResult(String result) {
+    private String formatResult(String result) {
         if (result.endsWith(".0"))
-            result = result.substring(0, result.length() - 1 - ".0".length());
+            result = result.substring(0, result.length() - ".0".length());
         return result;
     }
 
@@ -147,7 +107,7 @@ public final class Calculator {
             List<String> newList = replaceThreeElementsByOne(numOrOpList, opIndex, result.toString());
             return calculate(newList);
         }
-        opIndex = numOrOpList.indexOf(KEY_SUB);
+        opIndex = numOrOpList.indexOf(KEY_MINUS);
         if (opIndex != -1) {
             String lastNum = numOrOpList.get(opIndex - 1);
             String nextNum = numOrOpList.get(opIndex + 1);
@@ -195,68 +155,42 @@ public final class Calculator {
         }
     }
 
-    private final String getLastInput() {
+    private String getLastInput() {
         String result = "";
-        StringBuffer stringBuffer = this.inputStringBuffer;
-        if (stringBuffer.length() > 0) {
-            stringBuffer = this.inputStringBuffer;
-            StringBuffer stringBuffer1 = this.inputStringBuffer;
-            int i = stringBuffer.length();
-            result = String.valueOf(stringBuffer1.charAt(i - 1));
+        if (inputStringBuffer.length() > 0) {
+            result = inputStringBuffer.charAt(inputStringBuffer.length() - 1) + "";
         }
         return result;
     }
 
-    private final void deleteLastInput() {
-        StringBuffer stringBuffer = this.inputStringBuffer;
-        if (stringBuffer.length() > 0) {
-            stringBuffer = this.inputStringBuffer;
-            StringBuffer stringBuffer1 = this.inputStringBuffer;
-            int i = stringBuffer.length();
-            stringBuffer1.deleteCharAt(i - 1);
+    private void deleteLastInput() {
+        if (inputStringBuffer.length() > 0) {
+            inputStringBuffer.deleteCharAt(inputStringBuffer.length() - 1);
         }
     }
 
-    private final StringBuffer append(String input) {
-        return this.inputStringBuffer.append(input);
+    private void append(String input) {
+        inputStringBuffer.append(input);
     }
 
-    private final StringBuffer clear() {
-        StringBuffer stringBuffer1 = this.inputStringBuffer;
-        boolean bool2 = false;
-        StringBuffer stringBuffer2 = this.inputStringBuffer;
-        int i = stringBuffer1.length();
-        return stringBuffer2.delete(bool2, i);
+    private void clear() {
+        inputStringBuffer.delete(0, inputStringBuffer.length());
     }
 
-    private final boolean isDigit(String input) {
-        String str = input;
-        if (str.compareTo(KEY_ZERO) < 0) {
-
-        } else if (str.compareTo(KEY_NINE) <= 0) {
-
-        }
-        return false;
+    private boolean isDigit(String input) {
+        return input.compareTo(KEY_ZERO) >= 0 && input.compareTo(KEY_NINE) <= 0;
     }
 
-    private final boolean isDigitOrDot(String input) {
-        String str = input;
-        if (str.compareTo(KEY_ZERO) >= 0) {
-            if (str.compareTo(KEY_NINE) > 0)
-                if (Intrinsics.areEqual(input, KEY_DOT)) ;
-        } else if (Intrinsics.areEqual(input, KEY_DOT)) {
-
-        }
+    private boolean isDigitOrDot(String input) {
+        return isDigit(input) || KEY_DOT.equals(input);
     }
 
-    private final boolean isOp(String input) {
-        return (Intrinsics.areEqual(input, KEY_ADD) || Intrinsics.areEqual(input, KEY_SUB) || Intrinsics.areEqual(input, KEY_MULTIPLY) || Intrinsics.areEqual(input, KEY_DIV));
+    private boolean isOp(String input) {
+        return (Intrinsics.areEqual(input, KEY_ADD) || Intrinsics.areEqual(input, KEY_MINUS) || Intrinsics.areEqual(input, KEY_MULTIPLY) || Intrinsics.areEqual(input, KEY_DIV));
     }
 
-
-    public final List<String> replaceThreeElementsByOne(@NotNull List numOrOpList, int middleElementPosition, @NotNull String replacement) {
-        List<String> newList = new ArrayList<>();
-        newList.addAll(numOrOpList);
+    private final List<String> replaceThreeElementsByOne(@NotNull List<String> numOrOpList, int middleElementPosition, @NotNull String replacement) {
+        List<String> newList = new ArrayList<>(numOrOpList);
         newList.remove(middleElementPosition - 1);
         newList.remove(middleElementPosition - 1);
         newList.remove(middleElementPosition - 1);
@@ -264,12 +198,13 @@ public final class Calculator {
         return newList;
     }
 
-
     public final String getLastElementExceptOp(@NotNull String input) {
-        Regex regex = new Regex('[' + KEY_ADD + "|\\" + KEY_SUB + '|' + KEY_MULTIPLY + '|' + KEY_DIV + ']');
-        CharSequence charSequence = input;
-        boolean bool1 = false, bool2 = false;
-        List result = regex.split(charSequence, bool1);
-        return (String) CollectionsKt.last(result);
+        String regex = "[" + KEY_ADD + "|\\" + KEY_MINUS + "|" + KEY_MULTIPLY + "|" + KEY_DIV + "]";
+        String[] arr = input.split(regex);
+        if (arr.length > 0) {
+            return arr[arr.length - 1];
+        } else {
+            return "";
+        }
     }
 }

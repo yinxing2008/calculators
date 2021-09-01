@@ -5,47 +5,43 @@ import java.math.BigDecimal
 @ExperimentalStdlibApi
 class Calculator(private val resultCallback: ResultCallback) {
     companion object {
-        val KEY_CLEAR = "C"
-        val KEY_DIV = "÷"
-        val KEY_MULTIPLY = "×"
-        val KEY_DEL = "D"
-        val KEY_SEVEN = "7"
-        val KEY_EIGHT = "8"
-        val KEY_NINE = "9"
-        val KEY_SUB = "-"
-        val KEY_FOUR = "4"
-        val KEY_FIVE = "5"
-        val KEY_SIX = "6"
-        val KEY_ADD = "+"
-        val KEY_ONE = "1"
-        val KEY_TWO = "2"
-        val KEY_THREE = "3"
-        val KEY_GET_RESULT = "="
-        val KEY_ZERO = "0"
-        val KEY_DOT = "."
-        val CALC_SCALE = 10
+        const val KEY_CLEAR = "C"
+        const val KEY_ZERO = "0"
+        const val KEY_ONE = "1"
+        const val KEY_TWO = "2"
+        const val KEY_THREE = "3"
+        const val KEY_FOUR = "4"
+        const val KEY_FIVE = "5"
+        const val KEY_SIX = "6"
+        const val KEY_SEVEN = "7"
+        const val KEY_EIGHT = "8"
+        const val KEY_NINE = "9"
+        const val KEY_ADD = "+"
+        const val KEY_MINUS = "-"
+        const val KEY_DIV = "÷"
+        const val KEY_DOT = "."
+        const val KEY_MULTIPLY = "×"
+        const val KEY_GET_RESULT = "="
+        const val CALC_SCALE = 10
+        const val KEY_DEL = "D"
     }
 
     var inputStringBuffer = StringBuffer()
 
     fun accept(input: String) {
-        var tempResult = ""
         var result = ""
         when (input) {
             KEY_CLEAR -> clear()
             KEY_DEL -> deleteLastInput()
-            KEY_ADD, KEY_SUB, KEY_MULTIPLY, KEY_DIV -> checkInputOp(input)
+            KEY_ADD, KEY_MINUS, KEY_MULTIPLY, KEY_DIV -> checkInputOp(input)
             KEY_DOT -> checkInputDot(input)
             KEY_GET_RESULT -> result = getResult()
             else -> checkInputNum(input)
         }
         if (result.isNotEmpty()) {
             inputStringBuffer.replace(0, inputStringBuffer.length, result)
-        } else {
-            tempResult = getResult()
         }
         resultCallback.updateResult(inputStringBuffer.toString())
-        resultCallback.updateTempResult(tempResult)
     }
 
     private fun getResult(): String {
@@ -107,7 +103,7 @@ class Calculator(private val resultCallback: ResultCallback) {
             return calculate(newList)
         }
 
-        opIndex = numOrOpList.indexOf(KEY_SUB)
+        opIndex = numOrOpList.indexOf(KEY_MINUS)
         if (opIndex != -1) {
             val lastNum = numOrOpList[opIndex - 1]
             val nextNum = numOrOpList[opIndex + 1]
@@ -196,14 +192,14 @@ class Calculator(private val resultCallback: ResultCallback) {
     private fun isDigit(input: String) = input in KEY_ZERO..KEY_NINE
     private fun isDigitOrDot(input: String) = input in KEY_ZERO..KEY_NINE || input == KEY_DOT
     private fun isOp(input: String) =
-        input == KEY_ADD || input == KEY_SUB || input == KEY_MULTIPLY || input == KEY_DIV
+        input == KEY_ADD || input == KEY_MINUS || input == KEY_MULTIPLY || input == KEY_DIV
 
 
     /**
      * 将列表中连续的三个元素替换为一个元素
      * 用于实现计算结果替换，如原先的元素是：1 + 2，替换为3
      */
-    fun replaceThreeElementsByOne(
+    private fun replaceThreeElementsByOne(
         numOrOpList: MutableList<String>,
         middleElementPosition: Int,
         replacement: String
@@ -221,8 +217,8 @@ class Calculator(private val resultCallback: ResultCallback) {
      * 获取字符串中最后一个操作符后面的元素
      * 如字符串为：123+45*67，那返回67
      */
-    fun getLastElementExceptOp(input: String): String {
-        val regex = Regex("[$KEY_ADD|\\$KEY_SUB|$KEY_MULTIPLY|$KEY_DIV]")
+    private fun getLastElementExceptOp(input: String): String {
+        val regex = Regex("[$KEY_ADD|\\$KEY_MINUS|$KEY_MULTIPLY|$KEY_DIV]")
         val result = input.split(regex)
         return result.last()
     }
@@ -230,5 +226,4 @@ class Calculator(private val resultCallback: ResultCallback) {
 
 interface ResultCallback {
     fun updateResult(text: String)
-    fun updateTempResult(text: String)
 }

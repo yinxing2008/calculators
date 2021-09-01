@@ -1,25 +1,3 @@
 <resources>
     <string name="app_name">计算器-花生皮编程</string>
-
-    <string name ="divide_text">÷</string>
-    <string name ="multiply_text">×</string>
-    <string name ="plus_text">＋</string>
-    <string name ="minus_text">－</string>
-    <string name ="clear_text">C</string>
-
-    <string name ="dot_text">. </string>
-    <string name ="equal_text">＝</string>
-
-    <string name ="zero_text">0</string>
-    <string name ="one_text">1</string>
-    <string name ="second_text">2</string>
-    <string name ="three_text">3</string>
-    <string name ="four_text">4</string>
-    <string name ="five_text">5</string>
-    <string name ="six_text">6</string>
-    <string name ="seven_text">7</string>
-    <string name ="eight_text">8</string>
-    <string name ="nine_text">9</string>
-
-    <string name="display_Bar">%1$s %2$s %3$s</string>
 </resources>
