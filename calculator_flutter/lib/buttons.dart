@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:url_launcher/url_launcher.dart';
+
 import './button.dart';
 
 //------------------------ OptWidget --------------------------------
@@ -112,9 +114,7 @@ class _BtnWidgetState extends State<BtnWidget> {
   }
 
   String formatNumber(result) {
-    return result.length > 8
-        ? double.parse(result).toStringAsExponential(3)
-        : result;
+    return result.length > 8 ? double.parse(result).toStringAsExponential(3) : result;
   }
 
   // 计算第一个表达式
@@ -125,15 +125,12 @@ class _BtnWidgetState extends State<BtnWidget> {
       return _cal(expressList[0], operate1, expressList[2]);
     } else if (expressList.length == 5) {
       final operate2 = expressList[3];
-      if (RegExp(r'^[+-]$').hasMatch(operate1) &&
-          RegExp(r'^[×÷]$').hasMatch(operate2)) {
+      if (RegExp(r'^[+-]$').hasMatch(operate1) && RegExp(r'^[×÷]$').hasMatch(operate2)) {
         // 1 + 2 * 3
-        return _cal(expressList[0], operate1,
-            _cal(expressList[2], operate2, expressList[4]));
+        return _cal(expressList[0], operate1, _cal(expressList[2], operate2, expressList[4]));
       } else {
         // 1 + 2 + 3
-        return _cal(_cal(expressList[0], operate1, expressList[2]), operate2,
-            expressList[4]);
+        return _cal(_cal(expressList[0], operate1, expressList[2]), operate2, expressList[4]);
       }
     } else {
       // error
@@ -175,8 +172,7 @@ class _BtnWidgetState extends State<BtnWidget> {
     }
 
     if (val == '+/-') {
-      final String result =
-          double.parse(last).isNegative ? last.substring(1) : '-' + last;
+      final String result = double.parse(last).isNegative ? last.substring(1) : '-' + last;
       changeLast(result);
       return;
     }
@@ -209,8 +205,7 @@ class _BtnWidgetState extends State<BtnWidget> {
         }
         break;
       case 3:
-        if (RegExp(r'^[+-]$').hasMatch(newEntry[1]) &&
-            RegExp(r'^[×÷]$').hasMatch(val)) {
+        if (RegExp(r'^[+-]$').hasMatch(newEntry[1]) && RegExp(r'^[×÷]$').hasMatch(val)) {
           // 第一个是+ -，第二个是 × ÷ 入栈
           pushStack();
         } else {
@@ -238,8 +233,7 @@ class _BtnWidgetState extends State<BtnWidget> {
       case 4:
         // 1 + 2 * (=) => 1 + 2 * 2 => 1 + 4 => 5
         if (val == '=') {
-          final String result = _cal(newEntry[0], newEntry[1],
-              _cal(newEntry[2], newEntry[3], newEntry[2]));
+          final String result = _cal(newEntry[0], newEntry[1], _cal(newEntry[2], newEntry[3], newEntry[2]));
           newActiveBtn = '';
           newEntry = [result];
           lastIsResult = true;
@@ -293,71 +287,69 @@ class _BtnWidgetState extends State<BtnWidget> {
           color: Colors.black,
         ),
         child: SafeArea(
-            child: Flex(
-                direction: Axis.vertical,
-                mainAxisAlignment: MainAxisAlignment.end,
-                children: [
-              Container(
-                alignment: Alignment.centerRight,
-                height: widget.isLargeScreen ? 80 : 160.0,
-                padding:
-                    EdgeInsets.only(bottom: widget.isLargeScreen ? 10.0 : 40.0),
-                child: Text(
-                  '$_screen',
-                  textAlign: TextAlign.right,
-                  style: TextStyle(
-                    color: Colors.white,
-                    fontSize: fontSize,
-                  ),
-                  strutStyle: StrutStyle(
-                    fontSize: fontSize,
-                    height: 1.5,
-                  ),
-                ),
+            child: Flex(direction: Axis.vertical, mainAxisAlignment: MainAxisAlignment.end, children: [
+          Container(
+            alignment: Alignment.centerRight,
+            height: widget.isLargeScreen ? 80 : 160.0,
+            padding: EdgeInsets.only(bottom: widget.isLargeScreen ? 10.0 : 40.0),
+            child: Text(
+              '$_screen',
+              textAlign: TextAlign.right,
+              style: TextStyle(
+                color: Colors.white,
+                fontSize: fontSize,
               ),
-              Expanded(
-                  flex: 4,
-                  child: Flex(
-                      direction: Axis.vertical,
-                      children: buttonLists.map((buttonList) {
-                        return Expanded(
-                            flex: 1,
-                            child: Flex(
-                                direction: Axis.horizontal,
-                                children: buttonList.map((name) {
-                                  final type =
-                                      RegExp(r'^[0-9.]+$').hasMatch(name)
-                                          ? 'number'
-                                          : RegExp(r"([C/%])").hasMatch(name)
-                                              ? 'other'
-                                              : 'operate';
-
-                                  return Expanded(
-                                      flex: 1,
-                                      child: Center(
-                                        child: Padding(
-                                            padding: const EdgeInsets.all(8.0),
-                                            child: BaseBtn(
-                                              isLargeScreen:
-                                                  widget.isLargeScreen,
-                                              name: name,
-                                              active: _activeBtn == name,
-                                              type: type,
-                                              onChanged: handleMap[type],
-                                              screenIsZero: _screen == '0',
-                                              onClear: _handleClearBtnChanged,
-                                            )),
-                                      ));
-                                }).toList()));
-                      }).toList())),
-              new MaterialButton(
-                color: Colors.blue,
-                textColor: Colors.white,
-                child: new Text('点击了解更多...'),
-                onPressed: () {
-
-                },
+              strutStyle: StrutStyle(
+                fontSize: fontSize,
+                height: 1.5,
               ),
-            ])));
+            ),
+          ),
+          Expanded(
+              flex: 4,
+              child: Flex(
+                  direction: Axis.vertical,
+                  children: buttonLists.map((buttonList) {
+                    return Expanded(
+                        flex: 1,
+                        child: Flex(
+                            direction: Axis.horizontal,
+                            children: buttonList.map((name) {
+                              final type = RegExp(r'^[0-9.]+$').hasMatch(name)
+                                  ? 'number'
+                                  : RegExp(r"([C/%])").hasMatch(name)
+                                      ? 'other'
+                                      : 'operate';
+
+                              return Expanded(
+                                  flex: 1,
+                                  child: Center(
+                                    child: Padding(
+                                        padding: const EdgeInsets.all(8.0),
+                                        child: BaseBtn(
+                                          isLargeScreen: widget.isLargeScreen,
+                                          name: name,
+                                          active: _activeBtn == name,
+                                          type: type,
+                                          onChanged: handleMap[type],
+                                          screenIsZero: _screen == '0',
+                                          onClear: _handleClearBtnChanged,
+                                        )),
+                                  ));
+                            }).toList()));
+                  }).toList())),
+          Container(
+            alignment: Alignment.center,
+            height: 80,
+            padding: EdgeInsets.only(bottom: 10, top: 10),
+            child: new MaterialButton(
+              textColor: Colors.white,
+              child: new Text('点击了解更多...'),
+              onPressed: () {
+                launch('https://juejin.cn/post/7002792005688360968');
+              },
+            ),
+          ),
+        ])));
   }
 }
