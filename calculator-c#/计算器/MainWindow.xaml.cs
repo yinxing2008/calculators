@@ -25,10 +25,6 @@ namespace 计算器
         public MainWindow()
         {
             InitializeComponent();
-            B_MC.IsEnabled = false;
-            B_M__1.IsEnabled = false;
-            B_M__.IsEnabled = false;
-            B_MR.IsEnabled = false;
         }
 
         //temp用于临时存储操作数，oper存储最近一次的运算符
@@ -61,16 +57,6 @@ namespace 计算器
             }
             Out_1.Text = Convert.ToString(result);
             //Out_2.Text = Convert.ToString(result);
-        }
-
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-            //目标
-            this.contextMenu.PlacementTarget = this.btnMenu;
-            //位置
-            this.contextMenu.Placement = PlacementMode.Top;
-            //显示菜单
-            this.contextMenu.IsOpen = true;
         }
 
         private void B_0_Click(object sender, RoutedEventArgs e)
@@ -348,24 +334,6 @@ namespace 计算器
             memory -= Convert.ToDouble(Out_1.Text);
         }
 
-        private void B_MC_Click(object sender, RoutedEventArgs e)
-        {
-            memory = 0;
-            B_MC.IsEnabled = false;
-            B_M__1.IsEnabled = false;
-            B_M__.IsEnabled = false;
-            B_MR.IsEnabled = false;
-        }
-
-        private void B_MS_Click(object sender, RoutedEventArgs e)
-        {
-            memory = Convert.ToDouble(Out_1.Text);
-            B_MC.IsEnabled = true;
-            B_M__1.IsEnabled = true;
-            B_M__.IsEnabled = true;
-            B_MR.IsEnabled = true;
-        }
-
         private void B_eq_Click(object sender, RoutedEventArgs e)
         {
             op2 = Convert.ToDouble(Out_1.Text);
@@ -390,6 +358,10 @@ namespace 计算器
             oper = null;
             Out_1.Text = Convert.ToString(result);
             Out_2.Text = "";
+        }
+        private void B_about_Click(object sender, RoutedEventArgs e)
+        {
+            System.Diagnostics.Process.Start("explorer.exe", "https://juejin.cn/post/7002792005688360968/");
         }
 
         private void B_opp_Click(object sender, RoutedEventArgs e)

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="cn.cxy.calculator">
+    package="cn.hsp.calculator">
 
     <application
         android:allowBackup="true"
@@ -9,7 +9,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.HspCalculator">
-        <activity android:name=".HspActivity">
+        <activity android:name="cn.hsp.calculator.HspActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
