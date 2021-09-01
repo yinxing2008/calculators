@@ -1,20 +1,17 @@
 #define MAXSIZE 100
-#define END '\n'
+#define END '='
 #include "stdio.h"
 #include "stdlib.h"
 #include "malloc.h"
 #include "math.h"
-
 char ops[MAXSIZE];   //运算符栈
 int  ops_top;        //运算符栈顶标识
 double ovs[MAXSIZE];  //操作数栈
 int  ovs_top;         //操作数栈顶标识
-
 void push_ops(char x); //运算符进栈
 void push_ovs(double x); //操作数进栈
 char pop_ops(); //运算符出栈
 double pop_ovs();//操作数出栈
-
 char gettop_ops();  //取出运算符栈顶元素
 double gettop_ovs();  //取出操作数栈顶元素
 void inistack_ops();  //初始化运算符栈
@@ -24,44 +21,38 @@ int char_In(char c); //判断c是否为运算符
 double Operate(double a,char theta,double b); //对出栈的两个数计算
 double  EvaluateExpression( );//使用算符优先算法进行算术表示式求值
 //ops[]为运算符栈，ovs[]为操作数栈
-char input_h='\n';//定义全局变量，用于缓存输入慢速【+】
-char input_p='\n';//定义全局变量，用于缓存输入【+】
+char input_h='n';//定义全局变量，用于缓存输入慢速【+】
+char input_p='n';//定义全局变量，用于缓存输入【+】
 int temp2=0;//定义全局变量，用于判断是否在完全入栈前进行运算 【+】 
 int main(int argc, char* argv[]) {
-	printf("请输入算术表达式，以回车结束\n");
-	printf("%f\n",EvaluateExpression( ));
+	printf("计算器-花生皮编程\n");
+	printf("请输入计算表达式，如1+2=\n");
+	printf("%f",EvaluateExpression( ));
 	getchar();
 }
-
 void push_ops(char x) { //运算符进栈
 	if(ops_top==MAXSIZE-1) {
-		printf("运算符栈已满！上溢\n");
+		printf("运算符栈已满！上溢");
 		exit(1);
 	} else
-
 	{
 		ops_top++;
 		ops[ops_top]=x;
 	}
-
 }
-
-
 void push_ovs(double x) { //操作数进栈
 	if(ovs_top==MAXSIZE-1) {
-		printf("操作数栈已满！上溢\n");
+		printf("操作数栈已满！上溢");
 		exit(1);
 	} else {
 		ovs_top++;
 		ovs[ovs_top]=x;
 	}
 }
-
-
 char pop_ops() { //运算符出栈
 	char y;
 	if(ops_top==-1) {
-		printf("输入有误\n");
+		printf("输入有误");
 		exit(1);
 	} else {
 		y=ops[ops_top];
@@ -69,12 +60,10 @@ char pop_ops() { //运算符出栈
 	}
 	return y;
 }
-
-
 double pop_ovs() { //操作数出栈
 	double y;
 	if(ovs_top==-1) {
-		printf("输入有误\n");
+		printf("输入有误");
 		exit(1);
 	} else {
 		y=ovs[ovs_top];
@@ -82,39 +71,28 @@ double pop_ovs() { //操作数出栈
 	}
 	return y;
 }
-
-
 char gettop_ops() { //取出运算符栈顶元素
 	if (ops_top!=-1)
 		return ops[ops_top];
 	else {
-		printf("输入有误\n");
+		printf("输入有误");
 		exit(1);
 	}
 }
-
-
-
-
 double gettop_ovs() { //取出操作数栈顶元素
 	if (ovs_top!=-1)
 		return ovs[ovs_top];
 	else {
-		printf("输入有误\n");
+		printf("输入有误");
 		exit(1);
 	}
 }
-
-
 void inistack_ops() { //初始化运算符栈
 	ops_top=-1;
 }
-
 void inistack_ovs() { //初始化操作数栈
 	ovs_top=-1;
 }
-
-
 char Precede(char t1,char t2) { //判断t1与t2的优先级别
 	char f;
 	switch(t2) {
@@ -133,7 +111,7 @@ char Precede(char t1,char t2) { //判断t1与t2的优先级别
 			break;
 		case '(':
 			if (t1==')') {
-				printf("输入有误\n");
+				printf("输入有误");
 				exit(1);
 			} else
 				f='<';
@@ -144,7 +122,7 @@ char Precede(char t1,char t2) { //判断t1与t2的优先级别
 					f='=';
 					break;
 				case END:
-					printf("输入有误\n");
+					printf("输入有误");
 					exit(1);
 				default:
 					f='>';
@@ -156,7 +134,7 @@ char Precede(char t1,char t2) { //判断t1与t2的优先级别
 					f='=';
 					break;
 				case '(':
-					printf("输入有误\n");
+					printf("输入有误");
 					exit(1);
 				default:
 					f='>';
@@ -164,23 +142,22 @@ char Precede(char t1,char t2) { //判断t1与t2的优先级别
 	}
 	return f;
 }
-
 int char_In(char c) { //判断c是否为运算符
 	switch(c) {
 		case '+':
-			if((!temp2)&&(char_In(input_h)||input_h=='\n')) {//用于检测上一个输入是否为操作符【+】
+			if((!temp2)&&(char_In(input_h)||input_h=='n')) {//用于检测上一个输入是否为操作符【+】
 				push_ovs(0);//向操作数栈填入一个0参与负数运算【+】
 			}
 			return 1;
 		case '-':
-			if((!temp2)&&(char_In(input_h)||input_h=='\n')) {//用于检测上一个输入是否为操作符【+】
+			if((!temp2)&&(char_In(input_h)||input_h=='n')) {//用于检测上一个输入是否为操作符【+】
 				push_ovs(0);//向操作数栈填入一个0参与负数运算【+】
 			}
 			return 1;
 		case '(':
 			if((!temp2)){
 				if(input_h==')'||(input_h>='0'&&input_h<='9')||input_h=='.'){
-					printf("输入有误\n");
+					printf("输入有误");
 					exit(0);
 				}				
 			} 
@@ -188,7 +165,7 @@ int char_In(char c) { //判断c是否为运算符
 		case ')':
 			if((!temp2)){
 				if(!((input_h>='0'&&input_h<='9')||input_h==')')){
-					printf("输入有误\n");
+					printf("输入有误");
 					exit(0);
 				}				
 			} 
@@ -201,9 +178,6 @@ int char_In(char c) { //判断c是否为运算符
 			return 0;
 	}
 }
-
-
-
 double Operate(double a,char theta,double b) { //对出栈的两个数计算
 	double c;
 	switch(theta) { //theta为运算符
@@ -221,7 +195,6 @@ double Operate(double a,char theta,double b) { //对出栈的两个数计算
 	}
 	return c;
 }
-
 double EvaluateExpression( ) {
 //使用算符优先算法进行算术表示式求值
 //ops[]为运算符栈，ovs[]为操作数栈
@@ -254,7 +227,6 @@ double EvaluateExpression( ) {
 					stack_x=pop_ops();//相等则出栈，即脱括号接受下一个字符
 					input_c=getchar();
 					break;
-					
 				case '>':
 					temp2++;
 					theta=pop_ops();
@@ -263,10 +235,9 @@ double EvaluateExpression( ) {
 					push_ovs(Operate(a,theta,b));
 					break;
 			}
-
 		} else if((input_c>='0'&&input_c<='9')||input_c=='.') { //input_c是操作数
 			if(input_h==')'){//输入检查)右边不能为数字 
-				printf("输入有误\n");
+				printf("输入有误");
 				exit(0);
 			}
 			input_h=input_c;//缓存上一个输入【+】
@@ -276,7 +247,7 @@ double EvaluateExpression( ) {
 			curnum=(double)atof(buff);//将字符串转换为小数 【+】
 			input_c=getchar();
 		} else {
-			printf("输入有误\n");
+			printf("输入有误");
 			exit(1);
 		}
 		stack_x=gettop_ops();
