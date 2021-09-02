@@ -1,39 +1,6 @@
-<view class="center">
-  <view class="blue-top">
-    <view class="user-card">
-      <view class="card-top">
-        <view class="user-top">
-          <view class="user-vip" style="position:relative;">
-            <image class="user-pic" src="../images/my.png"></image>
-          </view>
-          <view class="user-board">
-            <button wx:if="{{!hasUserInfo}}" class="user-name" open-type="getUserInfo" bindgetuserinfo="getUserInfo">点击登陆</button>
-            <view wx:if="{{hasUserInfo}}" class="user-name">{{userInfo.nickName}}</view>
-          </view>
-          <button type="primary" bindtap="testTap">点击测试</button>
-        </view>
-      </view>
-
-    </view>
-  </view>
-  <view class="center-list">
-
-    <!--navigator target="miniProgram"/--->
-    <button class="center-list-item" openType="contact">
-      <icon class="icon1" color="#00c8fd" size="50" type="kefu"></icon>
-      <text class="list-text">联系客服</text>
-      <icon class="icon2" color="#8a8a8a" size="30" type="youjiantou"></icon>
-    </button>
-    <button class="center-list-item" openType="share">
-      <icon class="icon1" color="#00c8fd" size="40" type="share"></icon>
-      <text class="list-text">分享</text>
-      <icon class="icon2" color="#8a8a8a" size="30" type="youjiantou"></icon>
-    </button>
-    <button bindtap="showQrcode"  open-type="navigate" class="center-list-item" >
-      <icon class="icon1" color="#00c8fd" size="50" type="zan1"></icon>
-      <text class="list-text">赞赏支持</text>
-      <icon class="icon2" color="#8a8a8a" size="30" type="youjiantou"></icon>
-    </button>    
-  </view>
-  <view class="relief">© 2020 yaqi.wang</view>     
+<view class="container log-list">
+  <text class="log-item">
+    厦门大学计算机专业|华为八年高级工程师
+    十年软件开发经验，5年编程培训教学经验
+    目前从事编程教学，软件开发指导，软件类毕业设计指导。</text>
 </view>
