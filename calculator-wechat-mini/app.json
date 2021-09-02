@@ -1,12 +1,34 @@
 {
     "pages": [
-        "pages/index/index"
+        "pages/index/index",
+        "pages/mine/mine"
     ],
     "window": {
         "backgroundTextStyle": "light",
-        "navigationBarBackgroundColor": "#fff",
+        "navigationBarBackgroundColor": "#F56615",
         "navigationBarTitleText": "花生皮编程",
-        "navigationBarTextStyle": "black"
+        "navigationBarTextStyle": "white"
     },
+    "tabBar": {
+        "custom": false,
+        "color": "#696969",
+        "selectedColor": "#f58220",
+        "borderStyle": "black",
+        "backgroundColor": "#fff",
+        "list": [
+          {
+            "pagePath": "pages/index/index",
+            "text": "计算器",
+            "iconPath": "images/icon-home.png",
+            "selectedIconPath": "images/icon-home-selected.png"
+          },
+          {
+            "pagePath": "pages/mine/mine",
+            "text": "关于",
+            "iconPath": "images/icon-me.png",
+            "selectedIconPath": "images/icon-me-selected.png"
+          }
+        ]
+      },
     "sitemapLocation": "sitemap.json"
 }

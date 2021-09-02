@@ -1,24 +1,32 @@
+page {
+    background-color: #696969;
+}
 .content {
     height: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-color: #fff;
+    background-color: #696969;
     overflow-x: hidden;
 }
 .layout-top{
     width: 100%;
 }
-.layout-bottom{
+.layout-body{
     width: 100%;
 }
 .screen {
     text-align: right;
-    width: 100%;
     line-height: 260rpx;
-    padding: 0 10rpx;
+    padding: 0 20rpx;
     font-size: 60px;
+    background-color: #0a0a0a;
+    color: #fff;
     box-sizing: border-box;
+    margin-top: 50rpx;
+    margin-bottom: 10rpx;
+    margin-left: 20rpx;
+    margin-right: 20rpx;
 }
 .btn-group {
     display: flex;
@@ -39,19 +47,26 @@
 }
 .operator-input {
     color: #fef4e9;
-    background: #6950a1;
-    border-radius: 5rpx;
-    margin: 10rpx;
+    background: #fff;
+    color: #000;
+    border-radius: 10rpx;
+    margin: 20rpx;
+    font-size: 20px;
     font-weight: bold;
 }
 .number-input {
     color:#000;
-    border-radius: 5rpx;
-    margin: 10rpx;
-    background-color: #ccc;
-}
-.layout-comment{
-    position: absolute;
-    bottom: 0;
+    border-radius: 10rpx;
     margin: 20rpx;
+    font-size: 20px;
+    background-color: #0a0a0a;
+    color: #fff;
+}
+.equals-input {
+    color:#000;
+    border-radius: 10rpx;
+    margin: 20rpx;
+    font-size: 20px;
+    background-color: #F56615;
+    color: #000;
 }
