@@ -149,6 +149,6 @@
         android:paddingBottom="40dp"
         android:scrollbars="vertical"
         android:text="点击了解更多..."
-        android:textColor="#0F7FF5"
+        android:textColor="#FFFFFF"
         android:textSize="15sp" />
 </LinearLayout>
