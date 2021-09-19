@@ -7,8 +7,7 @@ import Foundation
 struct Calcuator {
     
     private(set) var result: Double? {
-        // 当我们的结果发生改变时候，我们将它设置为下次可能作为的操作数
-        // 这样可以继续 接着 计算其他的
+        // 当结果发生改变时，我们将它设置为下次可能作为的操作数，然后继续计算其他的
         didSet {
             if result != nil {
                 operand = result
