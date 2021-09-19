@@ -13,7 +13,7 @@
 		FF9D66031FE0D4C000572B18 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FF9D66011FE0D4C000572B18 /* LaunchScreen.storyboard */; };
 		FF9D660B1FE0D8C500572B18 /* DigitButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF9D660A1FE0D8C500572B18 /* DigitButton.swift */; };
 		FF9D660D1FE0DBB100572B18 /* CalculatorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF9D660C1FE0DBB100572B18 /* CalculatorViewController.swift */; };
-		FF9D660F1FE1128E00572B18 /* CalcuatorBrain.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF9D660E1FE1128E00572B18 /* CalcuatorBrain.swift */; };
+		FF9D660F1FE1128E00572B18 /* Calcuator.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF9D660E1FE1128E00572B18 /* Calcuator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,7 +25,7 @@
 		FF9D66041FE0D4C000572B18 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FF9D660A1FE0D8C500572B18 /* DigitButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DigitButton.swift; sourceTree = "<group>"; };
 		FF9D660C1FE0DBB100572B18 /* CalculatorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorViewController.swift; sourceTree = "<group>"; };
-		FF9D660E1FE1128E00572B18 /* CalcuatorBrain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalcuatorBrain.swift; sourceTree = "<group>"; };
+		FF9D660E1FE1128E00572B18 /* Calcuator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Calcuator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,7 +59,7 @@
 			isa = PBXGroup;
 			children = (
 				FF9D65F81FE0D4C000572B18 /* AppDelegate.swift */,
-				FF9D660E1FE1128E00572B18 /* CalcuatorBrain.swift */,
+				FF9D660E1FE1128E00572B18 /* Calcuator.swift */,
 				FF9D65FC1FE0D4C000572B18 /* Main.storyboard */,
 				FF9D660C1FE0DBB100572B18 /* CalculatorViewController.swift */,
 				FF9D660A1FE0D8C500572B18 /* DigitButton.swift */,
@@ -143,7 +143,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FF9D65F91FE0D4C000572B18 /* AppDelegate.swift in Sources */,
-				FF9D660F1FE1128E00572B18 /* CalcuatorBrain.swift in Sources */,
+				FF9D660F1FE1128E00572B18 /* Calcuator.swift in Sources */,
 				FF9D660D1FE0DBB100572B18 /* CalculatorViewController.swift in Sources */,
 				FF9D660B1FE0D8C500572B18 /* DigitButton.swift in Sources */,
 			);

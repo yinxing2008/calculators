@@ -4,7 +4,7 @@
 import Foundation
 
 
-struct CalcuatorBrain {
+struct Calcuator {
     
     private(set) var result: Double? {
         // 当我们的结果发生改变时候，我们将它设置为下次可能作为的操作数

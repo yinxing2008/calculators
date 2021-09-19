@@ -20,7 +20,7 @@ class CalculatorViewController: UIViewController {
         }
     }
     
-    var brain = CalcuatorBrain()
+    var brain = Calcuator()
     
     var userIsInTyping: Bool = false
 
