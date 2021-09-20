@@ -27,7 +27,7 @@ int temp2=0;//定义全局变量，用于判断是否在完全入栈前进行运
 int main(int argc, char* argv[]) {
 	printf("计算器-花生皮编程\n");
 	printf("请输入计算表达式，如1+2=\n");
-	printf("%f",EvaluateExpression( ));
+	printf("%f\n",EvaluateExpression( ));
 	getchar();
 }
 void push_ops(char x) { //运算符进栈
