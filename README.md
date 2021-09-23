@@ -17,4 +17,4 @@
 厦门大学计算机专业|华为八年高级工程师  
 十年软件开发经验，5年编程培训教学经验  
 目前从事编程教学，软件开发指导，软件类毕业设计指导。  
-所有编程资料及开源项目见[https://juejin.cn/post/7002792005688360968](https://juejin.cn/post/7002792005688360968)
+所有编程资料及开源项目见[https://blog.csdn.net/yinxing2008/article/details/120405881](https://blog.csdn.net/yinxing2008/article/details/120405881)
