@@ -1,2 +1,3 @@
-# C#仿win10计算器
-# https://blog.csdn.net/qq_43479622/article/details/91599602
+C#版计算器
+
+![](https://images.gitee.com/uploads/images/2021/0923/203622_1b837888_1013055.png "屏幕截图.png")
