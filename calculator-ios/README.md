@@ -1,6 +1,3 @@
-# Calculator
+iOS版计算器
 
-
-Swift 4  MVC 仿iOS11 系统自带的计算器app
-
-![](https://github.com/GerYun/Calculator/raw/master/Screenshots/222.gif)
+![](https://images.gitee.com/uploads/images/2021/0923/203548_3b2c8865_1013055.png "屏幕截图.png")
